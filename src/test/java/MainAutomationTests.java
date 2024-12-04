@@ -9,6 +9,7 @@ public class MainAutomationTests {
         driver.get("https://rahulshettyacademy.com");
         System.out.println(driver.getTitle());
         System.out.println(driver.getCurrentUrl());
+        System.out.println(driver.getPageSource());
         driver.close();
         // Firefox launch
         WebDriver driver1 = new FirefoxDriver();
