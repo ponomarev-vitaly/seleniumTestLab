@@ -17,6 +17,9 @@ public class Locators {
         driver.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("Johnny");
         driver.findElement(By.cssSelector("input[placeholder='Email']")).sendKeys("yayod46853@bflcafe.com");
         driver.findElement(By.xpath("//input[@type='text'][2]")).clear();
-        //driver.findElement(By.cssSelector("input[type='text']:nth-child(3)")).sendKeys("yayod48888@bflcafe.com");
+        driver.findElement(By.cssSelector("input[type='text']:nth-child(3)")).sendKeys("yayod48888@bflcafe.com");
+        driver.findElement(By.xpath("//form/input[3]")).sendKeys("+1(912)2024202");
+        driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
+        System.out.println(driver.findElement(By.cssSelector("form p")).getText());
     }
 }
