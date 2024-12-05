@@ -7,6 +7,8 @@ public class Locators {
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
         driver.findElement(By.id("inputUsername")).sendKeys("rahul");
+        driver.findElement(By.name("inputPassword")).sendKeys("hello123");
+
 
 
 
