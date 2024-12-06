@@ -12,5 +12,7 @@ public class LocatorsTwo {
         driver.findElement(By.id("inputUsername")).sendKeys("rahul");
         driver.findElement(By.name("inputPassword")).sendKeys("rahulshettyacademy");
         driver.findElement(By.className("signInBtn")).click();
+        driver.findElement(By.tagName("p")).getText();
+
     }
 }
