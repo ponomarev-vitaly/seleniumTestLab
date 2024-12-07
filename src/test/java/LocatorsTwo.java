@@ -10,6 +10,7 @@ public class LocatorsTwo {
         String name = "rahul";
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        getPassword(driver);
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
         driver.findElement(By.id("inputUsername")).sendKeys(name);
         driver.findElement(By.name("inputPassword")).sendKeys("rahulshettyacademy");
@@ -22,13 +23,17 @@ public class LocatorsTwo {
         driver.close();
     }
 
-    public void getPassword(WebDriver driver) throws InterruptedException {
+    public static String getPassword(WebDriver driver) throws InterruptedException {
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
         driver.findElement(By.linkText("Forgot your password?")).click();
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
-        System.out.println(driver.findElement(By.cssSelector("form p")).getText());
-
+        String passwordText = driver.findElement(By.cssSelector("form p")).getText();
+        // Please use temporary password 'rahulshettyacademy' to Login.
+        String[] passwordArray = passwordText.split("'");
+        // String[] passwordArray2 = passwordArray[1].split("'");
+        String password = passwordArray[1].split("'")[0];
+        return password;
 
     }
 }
