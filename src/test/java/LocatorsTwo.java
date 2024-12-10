@@ -1,6 +1,8 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 
 import java.time.Duration;
@@ -9,6 +11,8 @@ public class LocatorsTwo {
     public static void main(String[] args) throws InterruptedException {
         String name = "rahul";
         WebDriver driver = new ChromeDriver();
+        // WebDriver driver = new FirefoxDriver();
+        //WebDriver driver = new EdgeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         String password = getPassword(driver);
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
