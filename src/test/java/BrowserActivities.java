@@ -7,6 +7,8 @@ public class BrowserActivities {
         driver.manage().window().maximize();
         driver.get("http://google.com"); // Wait for all components are loaded
         driver.navigate().to("https://rahulshettyacademy.com");
+        driver.navigate().back();
+        driver.navigate().forward();
 
     }
 }
