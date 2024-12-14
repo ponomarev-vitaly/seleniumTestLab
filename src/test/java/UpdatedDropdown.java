@@ -9,6 +9,9 @@ public class UpdatedDropdown {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.spicejet.com/");
         driver.findElement(By.id("divpaxinfo")).click();
+        driver.findElement(By.id("hrefIncAdt")).click();
+        driver.findElement(By.id("btnclosepaxoption")).click();
+
 
 
     }
