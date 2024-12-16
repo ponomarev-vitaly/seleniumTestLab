@@ -11,9 +11,8 @@ public class UpdatedDropdown {
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
         // driver.get("https://www.spicejet.com/");
         Assert.assertFalse(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
-
         driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).click();
-        System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
+        Assert.assertTrue(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
 
         // Grab all checkboxes on the page
         System.out.println(driver.findElements(By.cssSelector("input[type='checkbox']")).size());
@@ -32,8 +31,8 @@ public class UpdatedDropdown {
 //        }
 
         driver.findElement(By.id("btnclosepaxoption")).click();
-
-        System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
+        Assert.assertEquals(driver.findElement(By.id("divpaxinfo")).getText(), "5 Adult");
+        // System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
 
     }
 }
