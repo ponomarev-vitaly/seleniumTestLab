@@ -9,6 +9,10 @@ public class UpdatedDropdown {
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
         // driver.get("https://www.spicejet.com/");
+        System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
+        driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).click();
+        System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
+
         driver.findElement(By.id("divpaxinfo")).click();
         Thread.sleep(2000L);
         System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
