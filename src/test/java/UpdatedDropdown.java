@@ -34,5 +34,8 @@ public class UpdatedDropdown {
         Assert.assertEquals(driver.findElement(By.id("divpaxinfo")).getText(), "5 Adult");
         // System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
 
+        System.out.println(driver.findElement(By.name("ctl00$mainContent$view_date2")).isEnabled());
+        driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+        System.out.println(driver.findElement(By.name("ctl00$mainContent$view_date2")).isEnabled());
     }
 }
