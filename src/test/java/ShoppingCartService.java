@@ -9,11 +9,18 @@ import java.util.List;
 public class ShoppingCartService {
     public static void main(String[] args) throws InterruptedException {
         String[] names = {"Cucumber", "Brocolli", "Beetroot", "Carrot"};
-        int j=0;
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 
+        addItems(driver, names);
+
+
+
+    }
+
+    public static void addItems(WebDriver driver, String[] names){
+        int j=0;
         List<WebElement> products = driver.findElements(By.cssSelector("h4.product-name"));
 
         for(int i =0; i<products.size(); i++){
@@ -34,6 +41,5 @@ public class ShoppingCartService {
                 }
             }
         }
-
     }
 }
