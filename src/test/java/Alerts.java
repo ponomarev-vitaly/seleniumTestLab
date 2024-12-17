@@ -12,7 +12,9 @@ public class Alerts {
         Thread.sleep(2000L);
         System.out.println(driver.switchTo().alert().getText());
         driver.switchTo().alert().accept();
+        Thread.sleep(2000L);
         driver.findElement(By.id("confirmbtn")).click();
+        System.out.println(driver.switchTo().alert().getText());
         driver.switchTo().alert().dismiss();
     }
 }
