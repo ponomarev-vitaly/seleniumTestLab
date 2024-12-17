@@ -26,8 +26,9 @@ public class ShoppingCartService {
 
             if(namesList.contains(nameOfTheProduct)){
                 j++;
-                driver.findElements(By.xpath("//button[text()='ADD TO CART']")).get(i).click();
-                Thread.sleep(5000L);
+                // driver.findElements(By.xpath("//button[text()='ADD TO CART']")).get(i).click();
+                // Thread.sleep(5000L);
+                driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
                 if(j==names.length){
                     break;
                 }
