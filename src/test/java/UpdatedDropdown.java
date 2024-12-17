@@ -21,7 +21,7 @@ public class UpdatedDropdown {
         Thread.sleep(2000L);
         System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
         int i = 1;
-        while(i<5){
+        while (i < 5) {
             driver.findElement(By.id("hrefIncAdt")).click();
             i++;
         }
@@ -38,11 +38,11 @@ public class UpdatedDropdown {
         System.out.println(driver.findElement(By.id("Div1")).getAttribute("style"));
         driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
         System.out.println(driver.findElement(By.id("Div1")).getAttribute("style"));
-        if(driver.findElement(By.id("Div1")).getAttribute("style").contains("1")){
+        if (driver.findElement(By.id("Div1")).getAttribute("style").contains("1")) {
             System.out.println("The return date calendar is enabled...");
             Assert.assertTrue(true);
-        }else {
-            Assert.assertTrue(false);
+        } else {
+            Assert.fail();
         }
         //System.out.println(driver.findElement(By.name("ctl00$mainContent$view_date2")).isEnabled());
 

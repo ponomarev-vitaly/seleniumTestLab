@@ -27,10 +27,10 @@ public class Assignment2 {
         driver.findElement(By.cssSelector("input[value='Submit']")).click();
         String strSuccessText = driver.findElement(By.cssSelector(".alert-success")).getText();
         System.out.println(strSuccessText);
-        if(strSuccessText.contains("The Form has been submitted successfully!")){
+        if (strSuccessText.contains("The Form has been submitted successfully!")) {
             Assert.assertTrue(true);
-        }else {
-            Assert.assertTrue(false);
+        } else {
+            Assert.fail();
         }
 
     }

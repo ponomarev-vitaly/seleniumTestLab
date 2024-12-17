@@ -20,7 +20,5 @@ public class StaticDropdown {
         System.out.println(dropdown.getFirstSelectedOption().getText());
 
 
-
-
     }
 }
