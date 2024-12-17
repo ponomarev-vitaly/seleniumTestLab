@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ShoppingCartService {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         String[] names = {"Cucumber", "Brocolli", "Beetroot"};
         int j=0;
 
@@ -27,6 +27,7 @@ public class ShoppingCartService {
             if(namesList.contains(nameOfTheProduct)){
                 j++;
                 driver.findElements(By.xpath("//button[text()='ADD TO CART']")).get(i).click();
+                Thread.sleep(5000L);
                 if(j==names.length){
                     break;
                 }
