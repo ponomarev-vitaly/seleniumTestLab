@@ -16,7 +16,7 @@ public class ShoppingCartService {
             String nameOfTheProduct = products.get(i).getText();
 
             if(nameOfTheProduct.contains("Cucumber")){
-                driver.findElement(By.cssSelector("//button[text()='ADD TO CART']")).click();
+                driver.findElement(By.xpath("(//button[text()='ADD TO CART'])["+i+"]")).click();
                 break;
             }
         }
