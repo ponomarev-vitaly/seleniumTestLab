@@ -12,7 +12,7 @@ public class ShoppingCartService {
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
-
+        Thread.sleep(3000L);
         addItems(driver, names);
 
 
