@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ShoppingCartService {
     public static void main(String[] args) throws InterruptedException {
-        String[] names = {"Cucumber", "Brocolli", "Beetroot"};
+        String[] names = {"Cucumber", "Brocolli", "Beetroot", "Carrot"};
         int j=0;
 
         WebDriver driver = new ChromeDriver();
