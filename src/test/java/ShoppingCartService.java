@@ -16,14 +16,13 @@ public class ShoppingCartService {
         addItems(driver, names);
 
 
-
     }
 
-    public static void addItems(WebDriver driver, String[] names){
-        int j=0;
+    public static void addItems(WebDriver driver, String[] names) {
+        int j = 0;
         List<WebElement> products = driver.findElements(By.cssSelector("h4.product-name"));
 
-        for(int i =0; i<products.size(); i++){
+        for (int i = 0; i < products.size(); i++) {
             String nameOfTheProduct = products.get(i).getText();
             nameOfTheProduct = nameOfTheProduct.split("-")[0];
             nameOfTheProduct = nameOfTheProduct.trim();
@@ -31,12 +30,12 @@ public class ShoppingCartService {
             // Convert array into array list for easy search
             List<String> namesList = Arrays.asList(names);
 
-            if(namesList.contains(nameOfTheProduct)){
+            if (namesList.contains(nameOfTheProduct)) {
                 j++;
                 // driver.findElements(By.xpath("//button[text()='ADD TO CART']")).get(i).click();
                 // Thread.sleep(5000L);
                 driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
-                if(j==names.length){
+                if (j == names.length) {
                     break;
                 }
             }
