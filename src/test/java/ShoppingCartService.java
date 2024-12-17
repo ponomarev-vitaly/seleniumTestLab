@@ -9,6 +9,7 @@ import java.util.List;
 public class ShoppingCartService {
     public static void main(String[] args) {
         String[] names = {"Cucumber", "Brocolli", "Beetroot"};
+        int j=0;
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
@@ -21,12 +22,14 @@ public class ShoppingCartService {
             nameOfTheProduct = nameOfTheProduct.trim();
 
             // Convert array into array list for easy search
-            List namesList = Arrays.asList(names);
-            int j=0;
+            List<String> namesList = Arrays.asList(names);
+
             if(namesList.contains(nameOfTheProduct)){
                 j++;
-                driver.findElement(By.xpath("(//button[text()='ADD TO CART'])["+i+"]")).click();
-
+                driver.findElements(By.xpath("//button[text()='ADD TO CART']")).get(i).click();
+                if(j==names.length){
+                    break;
+                }
             }
         }
 
