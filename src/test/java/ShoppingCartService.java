@@ -14,6 +14,10 @@ public class ShoppingCartService {
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
         Thread.sleep(3000L);
         addItems(driver, names);
+        driver.findElement(By.cssSelector("img[alt='Cart']")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'PROCEED TO CHECKOUT')]")).click();
+        driver.findElement(By.cssSelector("input.promoCode")).sendKeys("rahulshettyacademy");
+
 
 
     }
