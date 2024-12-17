@@ -9,6 +9,9 @@ public class UIE2ETestFramework {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+
+        driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+
         driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
         driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_originStation1_CTNR'] //a[text()=' Delhi (DEL)']")).click();
         Thread.sleep(2000);
@@ -24,6 +27,8 @@ public class UIE2ETestFramework {
 
         driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).click();
 
+        driver.findElement(By.id("divpaxinfo")).click();
+        Thread.sleep(2000L);
         int i = 1;
         while(i<5){
             driver.findElement(By.id("hrefIncAdt")).click();
@@ -42,6 +47,7 @@ public class UIE2ETestFramework {
 
         //driver.findElement(By.cssSelector("#ctl00_mainContent_btn_FindFlights")).click();
         driver.findElement(By.cssSelector("input[value='Search']")).click();
-
+        //driver.findElement(By.xpath("//input[value='Search']")).click()
+        //driver.findElement(By.name("ctl00$mainContent$btn_FindFlights")).click()
     }
 }
