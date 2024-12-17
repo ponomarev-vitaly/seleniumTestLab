@@ -20,7 +20,8 @@ public class ShoppingCartService {
         driver.findElement(By.cssSelector("img[alt='Cart']")).click();
         driver.findElement(By.xpath("//button[contains(text(),'PROCEED TO CHECKOUT')]")).click();
         driver.findElement(By.cssSelector("input.promoCode")).sendKeys("rahulshettyacademy");
-
+        driver.findElement(By.cssSelector("button.promoBtn")).click();
+        System.out.println(driver.findElement(By.cssSelector("span.promoInfo")).getText());
     }
 
     public static void addItems(WebDriver driver, String[] names) {
