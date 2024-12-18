@@ -6,7 +6,7 @@ public class FramesTest {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
         driver.get("https://jqueryui.com/droppable/");
-        driver.findElement(By.id("draggabl")).click();
+        driver.findElement(By.id("draggable")).click();
 
     }
 }
