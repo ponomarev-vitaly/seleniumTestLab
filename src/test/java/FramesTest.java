@@ -18,6 +18,7 @@ public class FramesTest {
         WebElement targetElement = driver.findElement(By.id("droppable"));
         a.dragAndDrop(sourceElement, targetElement).build().perform();
 
+        driver.switchTo().defaultContent(); // Step to switch to normal window
 
 
     }
