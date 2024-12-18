@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,8 +21,12 @@ public class AmazonAutomationSuite {
         //driver.findElement(By.xpath("(//span[@class='a-button-inner'])[1]")).click();
 
         Actions a = new Actions(driver);
+        WebElement moveToElementHello = driver.findElement(By.xpath("//span[@id='nav-link-accountList-nav-line-1']"));
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id='nav-link-accountList-nav-line-1']")));
-        a.moveToElement(driver.findElement(By.xpath("//span[@id='nav-link-accountList-nav-line-1']"))).build().perform();
+        a.moveToElement(moveToElementHello).build().perform();
+
+
 
 
 
