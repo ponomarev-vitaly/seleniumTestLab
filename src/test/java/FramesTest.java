@@ -10,5 +10,6 @@ public class FramesTest {
         // driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[class='demo-frame']")));
         driver.findElement(By.id("draggable")).click();
 
+
     }
 }
