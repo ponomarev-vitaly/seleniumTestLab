@@ -10,11 +10,12 @@ public class FramesTest {
         driver.get("https://jqueryui.com/droppable/");
         driver.switchTo().frame(driver.findElement(By.cssSelector("iframe.demo-frame")));
         // driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[class='demo-frame']")));
-        driver.findElement(By.id("draggable")).click();
+        // driver.findElement(By.id("draggable")).click();
         Actions a = new Actions(driver);
         WebElement sourceElement = driver.findElement(By.id("draggable"));
         WebElement targetElement = driver.findElement(By.id("droppable"));
-        a.dragAndDrop(sourceElement, targetElement);
+        a.dragAndDrop(sourceElement, targetElement).build().perform();
+
 
 
     }
