@@ -8,5 +8,10 @@ public class Assignment5 {
         driver.get("https://the-internet.herokuapp.com/");
         driver.findElement(By.cssSelector("a[href='/nested_frames']")).click();
 
+        driver.switchTo().frame(driver.findElement(By.xpath("//frame[@name='frame-top']")));
+        driver.switchTo().frame(driver.findElement(By.xpath("//frame[@name='frame-middle']")));
+        System.out.println(driver.findElement(By.xpath("//div[@id='content']")).getText());
+
+
     }
 }
