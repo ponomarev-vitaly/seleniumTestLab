@@ -28,7 +28,7 @@ public class AmazonAutomationSuite {
         WebElement moveToElementHello = driver.findElement(By.xpath("//span[@id='nav-link-accountList-nav-line-1']"));
         a.moveToElement(moveToElementHello).build().perform();
 
-        a.moveToElement(driver.findElement(By.id("twotabsearchtextbox"))).click().keyDown(Keys.SHIFT).sendKeys("hello").build().perform();
+        a.moveToElement(driver.findElement(By.id("twotabsearchtextbox"))).click().keyDown(Keys.SHIFT).sendKeys("hello").doubleClick().build().perform();
 
 
 
