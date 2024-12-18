@@ -8,6 +8,7 @@ public class FramesTest {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
         driver.get("https://jqueryui.com/droppable/");
+        System.out.println(driver.findElements(By.tagName("iframe")).size());
         driver.switchTo().frame(driver.findElement(By.cssSelector("iframe.demo-frame")));
         // driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[class='demo-frame']")));
         // driver.findElement(By.id("draggable")).click();
