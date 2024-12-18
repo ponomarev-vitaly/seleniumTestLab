@@ -23,7 +23,7 @@ public class AmazonAutomationSuite {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id='nav-link-accountList-nav-line-1']")));
         WebElement moveToElementHello = driver.findElement(By.xpath("//span[@id='nav-link-accountList-nav-line-1']"));
-        a.moveToElement(moveToElementHello).build().perform();
+        a.moveToElement(moveToElementHello).contextClick().build().perform();
 
     }
 }
