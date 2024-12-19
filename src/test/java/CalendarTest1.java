@@ -10,6 +10,7 @@ public class CalendarTest1 {
         String monthNumber = "6";
         String date = "15";
         String year = "2027";
+        String[] expectedList = {monthNumber, date, year};
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
@@ -29,5 +30,7 @@ public class CalendarTest1 {
         for(int i = 0; i < actualList.size(); i++){
             System.out.println(actualList.get(i).getAttribute("value"));
         }
+
+
     }
 }
