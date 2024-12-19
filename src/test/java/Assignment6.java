@@ -11,7 +11,7 @@ public class Assignment6 {
         driver.get("https://qaclickacademy.com/practice.php");
 
         String verificationText = driver.findElement(By.cssSelector("label[for='honda']")).getText();
-        // System.out.println(verificationText);
+        System.out.println(verificationText);
 
         driver.findElement(By.xpath("(//input[@id='checkBoxOption3'])[1]")).click();
 
@@ -22,10 +22,14 @@ public class Assignment6 {
         driver.findElement(By.xpath("//input[@id='name']")).sendKeys(verificationText);
         driver.findElement(By.xpath("//input[@id='alertbtn']")).click();
 
+        String textFromTheAlert = driver.switchTo().alert().getText().split(" ")[1].split(",")[0];
+        System.out.println(textFromTheAlert);
 
-
-
-
+        if (verificationText.equals(textFromTheAlert)) {
+            System.out.println("Text verified successfully...");
+        } else {
+            System.out.println("Sth is wrong...");
+        }
 
 
     }
