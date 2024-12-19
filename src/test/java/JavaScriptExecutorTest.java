@@ -3,6 +3,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -19,14 +20,18 @@ public class JavaScriptExecutorTest {
 
         List<WebElement> values = driver.findElements(By.cssSelector(".tableFixHead td:nth-child(4)"));
 
-        int sum = 0;
+        int actualSum = 0;
 
         for(int i = 0; i< values.size(); i++){
-            sum += Integer.parseInt(values.get(i).getText());
+            actualSum += Integer.parseInt(values.get(i).getText());
 
         }
 
-        System.out.println(sum);
+        System.out.println(actualSum);
+
+        int expectedSum = Integer.parseInt(driver.findElement(By.cssSelector(".totalAmount")).getText().split(":")[1].trim());
+        System.out.println(expectedSum);
+        Assert.assertEquals(actualSum, expectedSum);
 
 
     }
