@@ -4,8 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.Iterator;
+import java.util.Set;
+
 public class Scope {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // Count links on the page
         WebDriver driver = new ChromeDriver();
 
@@ -32,6 +35,14 @@ public class Scope {
             String clickOnTheLink = Keys.chord(Keys.CONTROL, Keys.ENTER);
             WebElement titleOfThePage = columnDriver.findElements(By.tagName("a")).get(i);
             titleOfThePage.sendKeys(clickOnTheLink);
+
+            Thread.sleep(5000L);
+            Set<String> setOfLinks = driver.getWindowHandles();
+            Iterator<String> stringIterator = setOfLinks.iterator();
+
+            while (stringIterator.hasNext()) {
+                stringIterator.next();
+            }
 
 
         }
