@@ -41,7 +41,7 @@ public class Scope {
             Iterator<String> stringIterator = setOfLinks.iterator();
 
             while (stringIterator.hasNext()) {
-                stringIterator.next();
+                driver.switchTo().window(stringIterator.next());
             }
 
 
