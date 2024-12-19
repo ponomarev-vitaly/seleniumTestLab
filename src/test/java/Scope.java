@@ -18,5 +18,10 @@ public class Scope {
         System.out.println(footerDriver.findElements(By.tagName("a")).size());
         // footerDriver.findElements(By.tagName("a")).size();
 
+        // Count links in the first column of the footer
+
+        WebElement columnDriver = footerDriver.findElement(By.xpath("//table/tbody/tr/td[1]/ul"));
+        System.out.println(columnDriver.findElements(By.tagName("a")).size());
+        // columnDriver.findElements(By.tagName("a")).size();
     }
 }
