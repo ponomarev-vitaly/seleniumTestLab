@@ -33,6 +33,23 @@ public class JavaScriptExecutorTest {
         System.out.println(expectedSum);
         Assert.assertEquals(actualSum, expectedSum);
 
+        js.executeScript("window.scrollBy(0,-500)");
+        Thread.sleep(3000L);
+        js.executeScript("window.scrollBy(0,750)");
+        Thread.sleep(3000L);
+        js.executeScript("document.querySelector('.table-display').scrollTop=5000");
+
+        List<WebElement> tableWithCourses = driver.findElements(By.cssSelector(".table-display td:nth-child(3)"));
+
+        int actualSum1 = 0;
+
+        for(int j = 0; j< tableWithCourses.size(); j++){
+            actualSum1 += Integer.parseInt(tableWithCourses.get(j).getText());
+            System.out.println(actualSum1);
+        }
+
+        System.out.println(actualSum1);
+
 
     }
 }
