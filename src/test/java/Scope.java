@@ -26,6 +26,9 @@ public class Scope {
 
         // Click on each link in the column and check if the pages were opened
 
+        for(int i=1; i<columnDriver.findElements(By.tagName("a")).size(); i++ ){
+            columnDriver.findElements(By.tagName("a")).get(i).click();
 
+        }
     }
 }
