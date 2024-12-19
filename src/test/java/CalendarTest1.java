@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -27,9 +28,12 @@ public class CalendarTest1 {
 
         List<WebElement> actualList = driver.findElements(By.cssSelector(".react-date-picker__inputGroup__input"));
 
-        for(int i = 0; i < actualList.size(); i++){
+        for (int i = 0; i < actualList.size(); i++) {
             System.out.println(actualList.get(i).getAttribute("value"));
+            Assert.assertEquals(actualList.get(i).getAttribute("value"), expectedList[i]);
         }
+
+        driver.quit();
 
 
     }
