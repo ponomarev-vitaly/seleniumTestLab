@@ -33,18 +33,19 @@ public class Scope {
         for (int i = 1; i < columnDriver.findElements(By.tagName("a")).size(); i++) {
 
             String clickOnTheLink = Keys.chord(Keys.CONTROL, Keys.ENTER);
-            WebElement titleOfThePage = columnDriver.findElements(By.tagName("a")).get(i);
-            titleOfThePage.sendKeys(clickOnTheLink);
+            columnDriver.findElements(By.tagName("a")).get(i).sendKeys(clickOnTheLink);
 
             Thread.sleep(5000L);
-            Set<String> setOfLinks = driver.getWindowHandles();
-            Iterator<String> stringIterator = setOfLinks.iterator();
-
-            while (stringIterator.hasNext()) {
-                driver.switchTo().window(stringIterator.next());
-            }
-
-
         }
+
+        Set<String> setOfLinks = driver.getWindowHandles();
+        Iterator<String> stringIterator = setOfLinks.iterator();
+
+        while (stringIterator.hasNext()) {
+            driver.switchTo().window(stringIterator.next());
+            System.out.println(driver.getTitle());
+        }
+
+
     }
 }
