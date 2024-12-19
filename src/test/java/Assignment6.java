@@ -11,11 +11,11 @@ public class Assignment6 {
         driver.get("https://qaclickacademy.com/practice.php");
 
         // String verificationText = driver.findElement(By.cssSelector("label[for='honda']")).getText();
-        String verificationText = driver.findElement(By.xpath("(//*[@id='checkbox-example']/fieldset/label)[3]")).getText();
+        String verificationText = driver.findElement(By.xpath("//*[@id='checkbox-example']/fieldset/label[3]")).getText();
         System.out.println(verificationText);
 
         // driver.findElement(By.xpath("(//input[@id='checkBoxOption3'])[1]")).click();
-        driver.findElement(By.xpath("(//*[@id='checkbox-example']/fieldset/label/input)[3]")).click();
+        driver.findElement(By.xpath("//*[@id='checkbox-example']/fieldset/label[3]/input")).click();
 
         WebElement dropdown = driver.findElement(By.id("dropdown-class-example"));
         Select abc = new Select(dropdown);
