@@ -1,0 +1,2 @@
+public class Miscellaneous {
+}
