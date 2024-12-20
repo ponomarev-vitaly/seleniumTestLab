@@ -17,6 +17,6 @@ public class Miscellaneous {
         driver.get("http://google.com");
 
         File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(src. new File(""));
+        FileUtils.copyFile(src. new File("C:\\Users\\vvp\\IdeaProjects\\seleniumTestLab\\src\\screenshot.png"));
     }
 }
