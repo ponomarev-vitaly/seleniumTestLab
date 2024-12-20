@@ -1,12 +1,15 @@
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class SSLCheck {
     public static void main(String[] args) {
         ChromeOptions options = new ChromeOptions();
+
+//        Proxy proxy = new Proxy();
+//        proxy.getHttpProxy("");
+//        options.setCapability("proxy", proxy);
 
         options.setAcceptInsecureCerts(true);
         WebDriver driver = new ChromeDriver(options);
@@ -18,8 +21,6 @@ public class SSLCheck {
 //        WebDriver driver1 = new FirefoxDriver(options1);
 //        driver1.get("https://expired.badssl.com/");
 //        System.out.println(driver1.getTitle());
-
-
 
 
     }
