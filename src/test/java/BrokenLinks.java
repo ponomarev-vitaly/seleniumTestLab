@@ -16,7 +16,8 @@ public class BrokenLinks {
 
         connectToWeb.setRequestMethod("HEAD");
         connectToWeb.connect();
-
+        int responseCode = connectToWeb.getResponseCode();
+        System.out.println(responseCode);
 
     }
 }
