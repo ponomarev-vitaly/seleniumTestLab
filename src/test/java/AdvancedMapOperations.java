@@ -38,6 +38,14 @@ public class AdvancedMapOperations {
     public void streamCollect(){
         List<String> ls = Stream.of("James", "Raymond", "Joshua", "Alexander", "Alice", "Anna", "Andrea", "Aurora", "Abigail").filter(s->s.endsWith("a")).map(s->s.toUpperCase()).collect(Collectors.toList());
         System.out.println(ls.get(0));
+
+        List<Integer> values = Arrays.asList(15,12,3,8,9,19,21,2,3,8,9);
+
+        // Print unique numbers
+        // Sort the array, display the 3rd index
+        // values.stream().distinct().forEach(s-> System.out.println(s));
+        List<Integer> li = values.stream().distinct().sorted().collect(Collectors.toList());
+        System.out.println(li.get(2));
     }
 }
 
