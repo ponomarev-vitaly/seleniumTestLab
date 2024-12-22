@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -25,9 +26,10 @@ public class AdvancedMapOperations {
         List<String> names1 = Arrays.asList("James", "Raymond", "Joshua", "Alexander", "Alice", "Anna", "Andrea", "Aurora", "Abigail");
         names1.stream().filter(s -> s.startsWith("A")).sorted().map(s -> s.toUpperCase()).forEach(s -> System.out.println(s));
 
-        Stream<String> newStream =Stream.concat(names.stream(), names1.stream());
-        newStream.sorted().forEach(s-> System.out.println(s));
-
+        Stream<String> newStream = Stream.concat(names.stream(), names1.stream());
+        // newStream.sorted().forEach(s-> System.out.println(s));
+        boolean flag = newStream.anyMatch(s -> s.equalsIgnoreCase("Emma"));
+        Assert.assertTrue(flag);
 
 
     }
