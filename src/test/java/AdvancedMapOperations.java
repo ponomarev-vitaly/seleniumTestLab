@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class AdvancedMapOperations {
@@ -35,8 +36,8 @@ public class AdvancedMapOperations {
 
     @Test
     public void streamCollect(){
-
-
+        List<String> ls = Stream.of("James", "Raymond", "Joshua", "Alexander", "Alice", "Anna", "Andrea", "Aurora", "Abigail").filter(s->s.endsWith("a")).map(s->s.toUpperCase()).collect(Collectors.toList());
+        System.out.println(ls.get(0));
     }
 }
 
