@@ -12,6 +12,16 @@ public class StreamProcessingExamples {
         names.add("Andrea");
         names.add("Aurora");
         names.add("Abigail");
+        int count = 0;
+
+        for (int i = 0; i < names.size(); i++) {
+            String actualName = names.get(i);
+            if (actualName.startsWith("A")) {
+                count++;
+            }
+        }
+
+        System.out.println(count);
 
 
     }
