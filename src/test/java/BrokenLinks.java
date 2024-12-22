@@ -9,7 +9,7 @@ import java.net.URL;
 public class BrokenLinks {
     public static void main(String[] args) throws IOException {
         WebDriver driver = new ChromeDriver();
-        driver.get("");
+        driver.get("https://rahulshettyacademy.com/AutomationPractice/");
         String url = driver.findElement(By.cssSelector("a[href*='soapui']")).getAttribute("href");
 
         HttpURLConnection connectToWeb = (HttpURLConnection) new URL(url).openConnection();
