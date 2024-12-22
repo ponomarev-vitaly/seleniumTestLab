@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.stream.Stream;
 
 public class StreamProcessingExamples {
     @Test
@@ -42,5 +43,8 @@ public class StreamProcessingExamples {
 
         Long c = names.stream().filter(s->s.startsWith("A")).count();
         System.out.println(c);
+
+        Stream.of("James", "Raymond", "Joshua", "Alexander", "Alice", "Anna", "Andrea", "Aurora", "Abigail").filter(s->s.startsWith("A"));
+
     }
 }
