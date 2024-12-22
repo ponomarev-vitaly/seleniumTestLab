@@ -40,6 +40,7 @@ public class StreamProcessingExamples {
         names.add("Aurora");
         names.add("Abigail");
 
-        names.stream().filter(s->s.startsWith("A"));
+        Long c = names.stream().filter(s->s.startsWith("A")).count();
+        System.out.println(c);
     }
 }
