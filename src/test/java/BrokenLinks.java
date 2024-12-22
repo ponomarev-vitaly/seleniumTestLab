@@ -25,8 +25,9 @@ public class BrokenLinks {
             connectToWeb.connect();
             int responseCode = connectToWeb.getResponseCode();
             System.out.println(responseCode);
-            Assert.assertTrue(responseCode < 400, "The link " + link.getText() + " is broken with code " + responseCode);
+            a.assertTrue(responseCode < 400, "The link " + link.getText() + " is broken with code " + responseCode);
 
         }
+        a.assertAll();
     }
 }
