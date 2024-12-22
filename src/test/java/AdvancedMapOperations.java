@@ -10,7 +10,8 @@ public class AdvancedMapOperations {
 
         Stream.of("James", "Raymond", "Joshua", "Alexander", "Alice", "Anna", "Andrea", "Aurora", "Abigail")
                 .filter(s->s.endsWith("a"))
-                .map(s->s.toUpperCase());
+                .map(s->s.toUpperCase())
+                .forEach(s-> System.out.println(s));
 
 
     }
