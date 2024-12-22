@@ -29,7 +29,7 @@ public class StreamProcessingExamples {
     }
 
     @Test
-    public void streamFilter(){
+    public void streamFilter() {
         ArrayList<String> names = new ArrayList<String>();
         names.add("James");
         names.add("Raymond");
@@ -41,10 +41,16 @@ public class StreamProcessingExamples {
         names.add("Aurora");
         names.add("Abigail");
 
-        Long c = names.stream().filter(s->s.startsWith("A")).count();
+        Long c = names.stream().filter(s -> s.startsWith("A")).count();
         System.out.println(c);
 
-        Stream.of("James", "Raymond", "Joshua", "Alexander", "Alice", "Anna", "Andrea", "Aurora", "Abigail").filter(s->s.startsWith("A"));
+        long d = Stream.of("James", "Raymond", "Joshua", "Alexander", "Alice", "Anna", "Andrea", "Aurora", "Abigail").filter(s -> {
+            s.startsWith("A");
+            return false;
+
+        }).count();
+
+        System.out.println(d);
 
     }
 }
