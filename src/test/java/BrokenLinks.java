@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -21,14 +22,12 @@ public class BrokenLinks {
             connectToWeb.connect();
             int responseCode = connectToWeb.getResponseCode();
             System.out.println(responseCode);
+            if (responseCode > 400) {
+                System.out.println("The link "+link.getText()+" is broken with code " + responseCode);
+                Assert.assertTrue(false);
+            }
         }
 
-        String url = driver.findElement(By.cssSelector("a[href*='brokenlink']")).getAttribute("href");
-        HttpURLConnection connectToWeb = (HttpURLConnection) new URL(url).openConnection();
-        connectToWeb.setRequestMethod("HEAD");
-        connectToWeb.connect();
-        int responseCode = connectToWeb.getResponseCode();
-        System.out.println(responseCode);
 
     }
 }
