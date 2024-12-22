@@ -31,6 +31,10 @@ public class AdvancedMapOperations {
         boolean flag = newStream.anyMatch(s -> s.equalsIgnoreCase("Emma"));
         System.out.println(flag);
         Assert.assertTrue(flag);
+    }
+
+    @Test
+    public void streamCollect(){
 
 
     }
