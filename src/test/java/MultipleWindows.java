@@ -2,6 +2,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.Iterator;
 import java.util.Set;
 
 public class MultipleWindows {
@@ -12,7 +13,12 @@ public class MultipleWindows {
         driver.switchTo().newWindow(WindowType.TAB);
 
         Set<String> windowHandles = driver.getWindowHandles();
-        // driver.switchTo().window(nameOrHandle);
+        Iterator<String> it = windowHandles.iterator();
+        String parentWindow = it.next();
+        String childWindow = it.next();
+
+        driver.switchTo().window(childWindow);
+        driver.get("https://rahulshettyacademy.com/");
 
 
     }
