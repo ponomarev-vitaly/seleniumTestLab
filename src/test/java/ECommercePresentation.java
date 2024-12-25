@@ -22,9 +22,18 @@ public class ECommercePresentation {
         // Compare original list with sorted list
         Assert.assertEquals(sortedList, originalList);
 
+        List<String> priceOfTheProduct;
         // Scan the name column with getText -> Rice -> print the price of the Rice
-        List<String> priceOfTheProduct = elementsList.stream().filter(s -> s.getText().contains("Beans")).map(s -> getPriceVeggie(s)).collect(Collectors.toList());
-        priceOfTheProduct.forEach(a -> System.out.println(a));
+        do {
+            List<WebElement> rows = driver.findElements(By.xpath("//tr/td[1]"));
+            priceOfTheProduct = rows.stream().filter(s -> s.getText().contains("Rice")).map(s -> getPriceVeggie(s)).collect(Collectors.toList());
+            priceOfTheProduct.forEach(a -> System.out.println(a));
+
+            if (priceOfTheProduct.size() < 1) {
+                driver.findElement(By.cssSelector("[aria-label='Next']")).click();
+
+            }
+        }while (priceOfTheProduct.size() < 1);
 
     }
 
