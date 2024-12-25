@@ -11,5 +11,9 @@ public class RelativeLocators {
         WebElement nameEditBox = driver.findElement(By.cssSelector("[name='name']"));
         System.out.println(driver.findElement(RelativeLocator.with(By.tagName("label")).above(nameEditBox)).getText());        ;
 
+        WebElement dateOfBirth = driver.findElement(By.cssSelector("[for='dateofBirth']"));
+        driver.findElement(RelativeLocator.with(By.tagName("input")).below(dateOfBirth)).click();
+
+
     }
 }
