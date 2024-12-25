@@ -12,7 +12,7 @@ public class ECommerceFilter {
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
         driver.findElement(By.id("search-field")).sendKeys("Rice");
-        List<WebElement> veggies = driver.findElements(By.xpath("'//tr/td[1]"));
+        List<WebElement> veggies = driver.findElements(By.xpath("//tr/td[1]"));
         // 5 results
         List<WebElement> filteredList = veggies.stream().filter(veggie->veggie.getText().contains("Rice")).collect(Collectors.toList());
         Assert.assertEquals(veggies.size(), filteredList.size());
