@@ -33,7 +33,7 @@ public class ECommerceSorting {
                 driver.findElement(By.cssSelector("[aria-label='Next']")).click();
 
             }
-        }while (priceOfTheProduct.size() < 1);
+        } while (priceOfTheProduct.size() < 1);
 
     }
 
