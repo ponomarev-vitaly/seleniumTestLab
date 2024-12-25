@@ -22,6 +22,9 @@ public class MultipleWindows {
         driver.get("https://rahulshettyacademy.com/");
         String courseName = driver.findElements(By.cssSelector("a[href*='https://courses.rahulshettyacademy.com/p']")).get(1).getText();
         // System.out.println(courseName);
+        driver.switchTo().window(parentWindow);
+
+
 
 
     }
