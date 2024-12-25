@@ -13,7 +13,7 @@ public class ECommerceFilter {
         driver.findElement(By.id("search-field")).sendKeys("Rice");
         List<WebElement> veggies = driver.findElements(By.xpath("'//tr/td[1]"));
         // 5 results
-        veggies.stream().filter(veggie->veggie.getText().contains("Rice")).collect(Collectors.toList());
+        List<WebElement> filteredList = veggies.stream().filter(veggie->veggie.getText().contains("Rice")).collect(Collectors.toList());
 
 
     }
