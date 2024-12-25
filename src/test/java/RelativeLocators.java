@@ -15,6 +15,7 @@ public class RelativeLocators {
         driver.findElement(RelativeLocator.with(By.tagName("input")).below(dateOfBirth)).click();
 
         WebElement iceCreamLabel = driver.findElement(By.xpath("//label[text()='Check me out if you Love IceCreams!']"));
+        driver.findElement(RelativeLocator.with(By.tagName("input")).toLeftOf(iceCreamLabel)).click();
 
 
     }
