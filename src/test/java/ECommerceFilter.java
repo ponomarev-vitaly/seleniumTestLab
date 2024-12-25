@@ -6,7 +6,7 @@ public class ECommerceFilter {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
-        driver.findElement(By.id("search-field"));
+        driver.findElement(By.id("search-field")).sendKeys("Rice");
 
 
 
